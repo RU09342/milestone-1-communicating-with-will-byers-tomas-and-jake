@@ -100,5 +100,10 @@ __interrupt void USCI0RX_ISR(void)
             UCA0TXBUF = UCA0RXBUF;                  //Transmit data to other processors
             ByteCount++;
         }
+    else if(ByteCount == numOfBytes )
+            {
+                numOfBytes =0;                  //Reset Functionality
+                ByteCount=0;
+            }
     }
 }
